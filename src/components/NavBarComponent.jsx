@@ -10,8 +10,7 @@ export const NavBarComponent = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-link active" aria-current="page">Compras</a>
-
+                        <a className="nav-link active" aria-current="page">Productos</a>
                     </div>
                 </div>
             </div>
