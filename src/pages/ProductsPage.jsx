@@ -13,7 +13,6 @@ export const ProductsPage = () => {
             const response = await fetch('https://fakestoreapi.com/products')
             const data = await response.json()
             setProducts(data)
-            console.log(data)
         } catch (error) {
             Swal.fire({
                 icon: 'error',
