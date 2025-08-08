@@ -6,6 +6,13 @@ export const CardComponent = ({ image, title, description, price }) => {
 
     const [added, setAdded] = useState(false)
 
+    const addProduct = () => {
+        setAdded(true)
+    }
+
+    const removeProduct = () => {
+        setAdded(false)
+    }
 
     return (
         <div className="card">
@@ -15,9 +22,9 @@ export const CardComponent = ({ image, title, description, price }) => {
                 <p className="card-description">{description}</p>
                 <p className="card-price">${price}</p>
                 {added ? (
-                    <button type="button" className="remove-button" onClick={() => setAdded(false)}>Remove from cart</button>
+                    <button type="button" className="remove-button" onClick={removeProduct}>Remove from cart</button>
                 ) : (
-                    <button type="button" className="add-button" onClick={() => setAdded(true)}>Add to cart</button>
+                    <button type="button" className="add-button" onClick={addProduct}>Add to cart</button>
                 )}
             </div>
         </div>

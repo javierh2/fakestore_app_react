@@ -18,7 +18,7 @@
 
 .card-content {
     flex: 1;
-  }
+}
 
 .card-title {
     margin: 0;
@@ -43,7 +43,7 @@
     transition: .5s all ease;
 }
 
-.add-button{
+.add-button {
     background-color: rgb(34, 86, 50);
     color: white;
     border: none;
@@ -54,9 +54,10 @@
 }
 
 
-.remove-button:hover{
+.remove-button:hover {
     background-color: rgb(151, 65, 65);
 }
-.add-button:hover{
+
+.add-button:hover {
     background-color: rgb(73, 137, 92);
 }
