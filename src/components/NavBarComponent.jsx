@@ -2,6 +2,7 @@ import React from 'react'
 import { Badge } from '@mui/material'
 import { ShoppingCart } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom'
+import '../styles/NavBarComponent.css'
 
 
 export const NavBarComponent = () => {

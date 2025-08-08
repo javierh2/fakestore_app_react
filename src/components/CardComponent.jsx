@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import '../styles/CardComponent.css'
 
 export const CardComponent = ({ image, title, description, price }) => {
 

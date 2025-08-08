@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { CardComponent } from '../components/CardComponent'
 
+
 export const ProductsPage = () => {
 
     const [products, setProducts] = useState([])
