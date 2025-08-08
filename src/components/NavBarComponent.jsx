@@ -1,4 +1,7 @@
 import React from 'react'
+import { Badge } from '@mui/material'
+import { ShoppingCart } from '@mui/icons-material'
+
 
 export const NavBarComponent = () => {
     return (
@@ -13,6 +16,9 @@ export const NavBarComponent = () => {
                         <a className="nav-link active" aria-current="page">Productos</a>
                     </div>
                 </div>
+                <Badge badgeContent={4} color="primary">
+                    <ShoppingCart color="action" />
+                </Badge>
             </div>
         </nav>
     )
