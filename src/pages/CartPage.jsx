@@ -24,9 +24,13 @@ export const CartPage = () => {
                             <th scope="row">{product.title}</th>
                             <td>{product.price}</td>
                             <td>
-                                <button  className="btn btn-warning" onClick={() => decrementQuantity(product.id)}>-</button>
-                                {product.quantity}
-                                <button  className="btn btn-success" onClick={() => incrementQuantity(product.id)}>+</button>
+                                <button className="btn btn-warning" onClick={() => decrementQuantity(product.id)}>
+                                    <span style={{ marginRight: '6px' }}>-</span>
+                                </button>
+                                <span style={{ margin: '0 8px' }}>{product.quantity}</span>
+                                <button className="btn btn-success" onClick={() => incrementQuantity(product.id)}>
+                                    <span style={{ marginLeft: '6px' }}>+</span>
+                                </button>
                             </td>
                             <td>
                                 <button  className="btn btn-danger" onClick={() => removeProduct(product.id)}>Delete</button>
