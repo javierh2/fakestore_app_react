@@ -7,6 +7,10 @@ export const CartPage = () => {
 
     const { shoppingList, removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext)
 
+    const totalPrice = () => {
+        return shoppingList.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+    }
+
     return (
         <>
             <table className="table">
@@ -37,6 +41,12 @@ export const CartPage = () => {
                             </td>
                         </tr>
                     ))}
+                    <tr>
+                    <th><b>Total:</b></th>
+                    <td></td>
+                    <td></td>
+                    <td>${totalPrice()}</td>
+                    </tr>
                 </tbody>
             </table>
             <div className="d-grid gap-2">
