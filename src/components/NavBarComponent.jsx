@@ -4,6 +4,7 @@ import { ShoppingCart } from '@mui/icons-material'
 import { NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import '../styles/NavBarComponent.css'
 
 export const NavBarComponent = () => {
 
@@ -20,8 +21,11 @@ export const NavBarComponent = () => {
                     <div className="navbar-nav">
                         <NavLink to="/" className="nav-link active" aria-current="page">Productos</NavLink>
                     </div>
+                    <div className="navbar-nav">
+                        <NavLink to="/cart" className="nav-link" aria-current="page">Carrito</NavLink>
+                    </div>
                 </div>
-                <NavLink to="/cart">
+                <NavLink className="cart-icon" to="/cart">
                     <Badge badgeContent={shoppingList.length} color="primary">
                         <ShoppingCart color="action" />
                     </Badge>
