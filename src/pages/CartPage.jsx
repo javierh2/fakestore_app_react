@@ -1,7 +1,8 @@
 import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
-import { CartProvider } from '../context/CartProvider'
+import Swal from 'sweetalert2'
+
 
 export const CartPage = () => {
 
@@ -9,6 +10,15 @@ export const CartPage = () => {
 
     const totalPrice = () => {
         return shoppingList.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+    }
+
+    const handlerPurchase = () => {
+        const productsToPurchase = shoppingList.map(product => `${product.title} x ${product.quantity}`).join('\n');
+        Swal.fire({
+            title: `You are about to purchase the following items:\n${productsToPurchase}\n\nTotal: $${totalPrice()}`,
+            icon: 'success',
+            html: `<pre style="text-align: left;">${productsToPurchase}</pre>`,
+        })
     }
 
     return (
@@ -50,7 +60,7 @@ export const CartPage = () => {
                 </tbody>
             </table>
             <div className="d-grid gap-2">
-                <button className="btn btn-primary" type="button">Buy</button>
+                <button className="btn btn-primary" type="button" onClick={handlerPurchase}>Buy</button>
             </div>
         </>
     )
