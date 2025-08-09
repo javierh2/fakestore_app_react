@@ -1,6 +1,3 @@
-import React, { use } from 'react'
-import { useEffect, useState } from 'react'
-import Swal from 'sweetalert2'
 import { CardComponent } from '../components/CardComponent'
 import { ProductContext } from '../context/ProductContext'
 import { useContext } from 'react'

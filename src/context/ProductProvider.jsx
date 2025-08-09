@@ -1,6 +1,5 @@
-import React from 'react'
 import { ProductContext } from '../context/ProductContext'
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 
 export const ProductProvider = ({ children }) => {
