@@ -1,6 +1,12 @@
 import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+import { CartProvider } from '../context/CartProvider'
 
 export const CartPage = () => {
+
+    const { shoppingList, removeProduct, incrementQuantity, decrementQuantity } = useContext(CartContext)
+
     return (
         <>
             <table className="table">
@@ -13,12 +19,20 @@ export const CartPage = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">Name</th>
-                        <td>Price</td>
-                        <td>Amount</td>
-                        <td>Delete</td>
-                    </tr>
+                    {shoppingList.map(product => (
+                        <tr key={product.id}>
+                            <th scope="row">{product.title}</th>
+                            <td>{product.price}</td>
+                            <td>
+                                <button  className="btn btn-warning" onClick={() => decrementQuantity(product.id)}>-</button>
+                                {product.quantity}
+                                <button  className="btn btn-success" onClick={() => incrementQuantity(product.id)}>+</button>
+                            </td>
+                            <td>
+                                <button  className="btn btn-danger" onClick={() => removeProduct(product.id)}>Delete</button>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
             <div className="d-grid gap-2">

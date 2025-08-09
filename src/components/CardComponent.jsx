@@ -1,18 +1,35 @@
 import React from 'react'
 import { useState } from 'react'
 import '../styles/CardComponent.css'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+import { useEffect } from 'react'
 
-export const CardComponent = ({ image, title, description, price }) => {
+
+export const CardComponent = ({ id, image, title, description, price, handlerAdd, handlerRemove }) => {
+
+    const { shoppingList } = useContext(CartContext)
 
     const [added, setAdded] = useState(false)
 
     const addProduct = () => {
+        handlerAdd()
         setAdded(true)
     }
 
     const removeProduct = () => {
+        handlerRemove()
         setAdded(false)
     }
+
+    const checkAdded = () => {
+        const boolean = shoppingList.some(product => product.id === id)
+        setAdded(boolean)
+    }
+    useEffect(() => {
+        checkAdded()
+    }, [])
+
 
     return (
         <div className="card">
